@@ -34,8 +34,32 @@
 
 /* Protótipos */
 
+int busca_linear(char string[MAX], int tam_string, char chave);
+
 int main (int argc, char *argv[])
 {
-
+  char str_1[MAX], chave;
+  int a;
+  printf("Digite uma string: ");
+  fgets(str_1,MAX,stdin);
+  setbuf(stdin, 0);
+  printf("Digite uma chave: ");
+  scanf("%c",&chave);
+  a = busca_linear(str_1,strlen(str_1),chave);
+  if(a==-1){
+    printf("Caractere %c não foi encontrado.",chave);
+    return 0;
+  }
+  printf("Caractere %c encontrado na posição %i",chave,a);
   return 0;
+}
+
+int busca_linear(char string[MAX], int tam_string, char chave) {
+  int i;
+  for(i=0;i<tam_string;i++){
+    if(tolower(chave)==tolower(string[i])){
+      return i;
+    }
+  }
+  return -1;
 }

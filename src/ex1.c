@@ -18,5 +18,12 @@
 
 int main (int argc, char *argv[])
 {
+    char str_1[MAX], str_inv[MAX];
+  printf("Digite uma string: ");
+  fgets(str_1,MAX,stdin);
+  for(int i = 0; i<strlen(str_1);i++){
+    str_inv[strlen(str_1)-i-1]=str_1[i];
+  }
+  printf("%s",str_inv);
   return 0;
 }

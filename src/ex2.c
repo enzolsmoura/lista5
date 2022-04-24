@@ -27,6 +27,19 @@
 
 int main (int argc, char *argv[])
 {
+  char str_1[MAX], str_inv[MAX];
+  printf("Digite uma string: ");
+  fgets(str_1,MAX,stdin);
+  for(int i = 0; i<strlen(str_1);i++){
+    str_inv[strlen(str_1)-i-1]=str_1[i];
+  }
 
+  for(int i=0;i<strlen(str_1)-1;i++){
+    if(tolower(str_inv[i+1])!=tolower(str_1[i])){
+      printf("Não é palíndromo");
+      return 0;
+    }
+  }
+  printf("É palíndromo");
   return 0;
 }
