@@ -28,6 +28,24 @@ void exibe_nomes(char nomes[MAX_NOMES][MAX]);
 
 int main (int argc, char *argv[])
 {
+  char string[MAX];
+  char nomes[MAX_NOMES][MAX];
+  char *nome;
+  int i = 0;
+  printf("Nomes: ");
+  fgets(string,MAX,stdin);
+  if(string[strlen(string)-1]=='\n'){
+    string[strlen(string)-1]='\0';
+  }
+  nome = strtok(string,",");
+  while(nome!=NULL){
+    for(int j=0;j<strlen(nome);j++){
+      nomes[i][j] = nome[j]; 
+    }
+    nome = strtok(NULL,",");
+    i++;
+  }
+  exibe_nomes(nomes);
   return 0;
 }
 
