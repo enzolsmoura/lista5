@@ -31,5 +31,18 @@
 
 int main (int argc, char *argv[])
 {
+  char str[MAX],intervalo[MAX];
+  int comeco,fim;
+  printf("Digite uma string: ");
+  fgets(str,MAX,stdin);
+  setbuf(stdin,0);
+  printf("Intervalo: ");
+  fgets(intervalo,MAX,stdin);
+  setbuf(stdin,0);
+  comeco = atoi(strtok(intervalo,","));
+  fim = atoi(strtok(NULL,","));
+  for(int i=comeco;i<=fim;i++){
+    printf("%c",str[i]);
+  }
   return 0;
 }
